@@ -9,7 +9,7 @@ using Microsoft.Dexterity.Bridge;
 using Microsoft.Dexterity.Applications;
 using Microsoft.Dexterity.Shell;
 
-namespace LogicOne_ComprobanteFiscal.Forms
+namespace LogicOne_ComprobanteFiscal
 {
     public partial class LONC00101 : DexUIForm
     {
@@ -19,6 +19,18 @@ namespace LogicOne_ComprobanteFiscal.Forms
         }
 
         private void LONC00101_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.CenterToScreen();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "LogicOne Número Comprobante Fiscal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {

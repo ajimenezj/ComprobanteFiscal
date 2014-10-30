@@ -1,4 +1,4 @@
-﻿namespace LogicOne_ComprobanteFiscal.Forms
+﻿namespace LogicOne_ComprobanteFiscal
 {
     partial class LONC00101
     {
@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LONC00101));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -41,15 +46,41 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtClientCode = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtClase = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cboTipoNcf = new System.Windows.Forms.ComboBox();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.CLIENTID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ACTIVATIONDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EXPIRATIONDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAYMENTCHARGE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODESTATUS = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.INACTIVE = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.FREETRIAL = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PAYMENTACCOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRANSACTIONID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODIGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WEB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sistema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COMENTARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SERVER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAYMENTGATEWAY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DEX_ROW_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ncf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaTransaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbActivo = new System.Windows.Forms.CheckBox();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -60,7 +91,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.Toolbar_Save;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(12, 0);
             this.button1.Name = "button1";
@@ -78,7 +109,7 @@
             this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.Toolbar_Clear;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClear.Location = new System.Drawing.Point(93, 0);
             this.btnClear.Name = "btnClear";
@@ -98,7 +129,7 @@
             this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.Toolbar_Print;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
             this.btnPrint.Location = new System.Drawing.Point(593, 0);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(24, 24);
@@ -116,7 +147,7 @@
             this.btnPrivious.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPrivious.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPrivious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrivious.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.VCR_Previous;
+            this.btnPrivious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrivious.Image")));
             this.btnPrivious.Location = new System.Drawing.Point(29, -2);
             this.btnPrivious.Name = "btnPrivious";
             this.btnPrivious.Size = new System.Drawing.Size(24, 24);
@@ -134,7 +165,7 @@
             this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.VCR_Next;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.Location = new System.Drawing.Point(55, -2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(24, 24);
@@ -152,7 +183,7 @@
             this.btnLast.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnLast.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLast.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.VCR_Last;
+            this.btnLast.Image = ((System.Drawing.Image)(resources.GetObject("btnLast.Image")));
             this.btnLast.Location = new System.Drawing.Point(81, -2);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(24, 24);
@@ -170,7 +201,7 @@
             this.btnFirst.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnFirst.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.VCR_First;
+            this.btnFirst.Image = ((System.Drawing.Image)(resources.GetObject("btnFirst.Image")));
             this.btnFirst.Location = new System.Drawing.Point(3, -2);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(24, 24);
@@ -235,14 +266,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Teléfono";
             // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(9, 214);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Comentario";
-            // 
             // txtClientCode
             // 
             this.txtClientCode.BackColor = System.Drawing.SystemColors.Window;
@@ -279,16 +302,6 @@
             this.txtTelefono.Size = new System.Drawing.Size(117, 13);
             this.txtTelefono.TabIndex = 18;
             // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(12, 238);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(592, 103);
-            this.textBox5.TabIndex = 19;
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
@@ -297,13 +310,14 @@
             this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Image = global::LogicOne_ComprobanteFiscal.Properties.Resources.Field_Lookup;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.Location = new System.Drawing.Point(204, 55);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(20, 20);
             this.btnSearch.TabIndex = 20;
             this.btnSearch.TabStop = false;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cboTipoNcf
             // 
@@ -311,22 +325,245 @@
             this.cboTipoNcf.FormattingEnabled = true;
             this.cboTipoNcf.Location = new System.Drawing.Point(98, 127);
             this.cboTipoNcf.Name = "cboTipoNcf";
-            this.cboTipoNcf.Size = new System.Drawing.Size(121, 21);
+            this.cboTipoNcf.Size = new System.Drawing.Size(212, 21);
             this.cboTipoNcf.TabIndex = 21;
+            // 
+            // dgvDatos
+            // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDatos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ncf,
+            this.fechaTransaccion,
+            this.monto});
+            this.dgvDatos.EnableHeadersVisualStyles = false;
+            this.dgvDatos.GridColor = System.Drawing.Color.Silver;
+            this.dgvDatos.Location = new System.Drawing.Point(12, 195);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDatos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDatos.RowHeadersVisible = false;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvDatos.Size = new System.Drawing.Size(605, 161);
+            this.dgvDatos.TabIndex = 22;
+            // 
+            // CLIENTID
+            // 
+            this.CLIENTID.DataPropertyName = "CLIENTID";
+            this.CLIENTID.HeaderText = "Id cliente";
+            this.CLIENTID.Name = "CLIENTID";
+            this.CLIENTID.Visible = false;
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.DataPropertyName = "EMAIL";
+            this.EMAIL.HeaderText = "Correo Electrónico";
+            this.EMAIL.Name = "EMAIL";
+            // 
+            // ACTIVATIONDATE
+            // 
+            this.ACTIVATIONDATE.DataPropertyName = "ACTIVATIONDATE";
+            this.ACTIVATIONDATE.HeaderText = "Activado";
+            this.ACTIVATIONDATE.Name = "ACTIVATIONDATE";
+            this.ACTIVATIONDATE.Visible = false;
+            // 
+            // EXPIRATIONDATE
+            // 
+            this.EXPIRATIONDATE.DataPropertyName = "EXPIRATIONDATE";
+            this.EXPIRATIONDATE.HeaderText = "Expira";
+            this.EXPIRATIONDATE.Name = "EXPIRATIONDATE";
+            // 
+            // FECHA
+            // 
+            this.FECHA.DataPropertyName = "FECHA";
+            this.FECHA.HeaderText = "Comprado";
+            this.FECHA.Name = "FECHA";
+            // 
+            // PAGO
+            // 
+            this.PAGO.DataPropertyName = "PAGO";
+            this.PAGO.HeaderText = "Pagado";
+            this.PAGO.Name = "PAGO";
+            // 
+            // PAYMENTCHARGE
+            // 
+            this.PAYMENTCHARGE.DataPropertyName = "PAYMENTCHARGE";
+            this.PAYMENTCHARGE.HeaderText = "Cargo";
+            this.PAYMENTCHARGE.Name = "PAYMENTCHARGE";
+            // 
+            // CODESTATUS
+            // 
+            this.CODESTATUS.DataPropertyName = "CODESTATUS";
+            this.CODESTATUS.HeaderText = "Activo";
+            this.CODESTATUS.Name = "CODESTATUS";
+            this.CODESTATUS.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CODESTATUS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // INACTIVE
+            // 
+            this.INACTIVE.DataPropertyName = "INACTIVE";
+            this.INACTIVE.HeaderText = "Inactivo";
+            this.INACTIVE.Name = "INACTIVE";
+            // 
+            // FREETRIAL
+            // 
+            this.FREETRIAL.DataPropertyName = "FREETRIAL";
+            this.FREETRIAL.HeaderText = "Trial";
+            this.FREETRIAL.Name = "FREETRIAL";
+            this.FREETRIAL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FREETRIAL.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // PAYMENTACCOUNT
+            // 
+            this.PAYMENTACCOUNT.DataPropertyName = "PAYMENTACCOUNT";
+            this.PAYMENTACCOUNT.HeaderText = "PAYMENTACCOUNT";
+            this.PAYMENTACCOUNT.Name = "PAYMENTACCOUNT";
+            this.PAYMENTACCOUNT.Visible = false;
+            // 
+            // TRANSACTIONID
+            // 
+            this.TRANSACTIONID.DataPropertyName = "TRANSACTIONID";
+            this.TRANSACTIONID.HeaderText = "Transacción Id";
+            this.TRANSACTIONID.Name = "TRANSACTIONID";
+            // 
+            // CODIGO
+            // 
+            this.CODIGO.DataPropertyName = "CODIGO";
+            this.CODIGO.HeaderText = "Codigo";
+            this.CODIGO.Name = "CODIGO";
+            // 
+            // WEB
+            // 
+            this.WEB.DataPropertyName = "WEB";
+            this.WEB.HeaderText = "Web";
+            this.WEB.Name = "WEB";
+            // 
+            // sistema
+            // 
+            this.sistema.DataPropertyName = "sistema";
+            this.sistema.HeaderText = "Sistema";
+            this.sistema.Name = "sistema";
+            // 
+            // COMENTARIO
+            // 
+            this.COMENTARIO.DataPropertyName = "COMENTARIO";
+            this.COMENTARIO.HeaderText = "Comentario";
+            this.COMENTARIO.Name = "COMENTARIO";
+            // 
+            // PORT
+            // 
+            this.PORT.DataPropertyName = "PORT";
+            this.PORT.HeaderText = "PORT";
+            this.PORT.Name = "PORT";
+            this.PORT.Visible = false;
+            // 
+            // SERVER
+            // 
+            this.SERVER.DataPropertyName = "SERVER";
+            this.SERVER.HeaderText = "SERVER";
+            this.SERVER.Name = "SERVER";
+            this.SERVER.Visible = false;
+            // 
+            // PAYMENTGATEWAY
+            // 
+            this.PAYMENTGATEWAY.DataPropertyName = "PAYMENTGATEWAY";
+            this.PAYMENTGATEWAY.HeaderText = "PAYMENTGATEWAY";
+            this.PAYMENTGATEWAY.Name = "PAYMENTGATEWAY";
+            this.PAYMENTGATEWAY.Visible = false;
+            // 
+            // DEX_ROW_ID
+            // 
+            this.DEX_ROW_ID.DataPropertyName = "DEX_ROW_ID";
+            this.DEX_ROW_ID.HeaderText = "DEX_ROW_ID";
+            this.DEX_ROW_ID.Name = "DEX_ROW_ID";
+            this.DEX_ROW_ID.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(16, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Comprobante(s) Asignado(s)";
+            // 
+            // ncf
+            // 
+            this.ncf.HeaderText = "Número Asignado";
+            this.ncf.Name = "ncf";
+            // 
+            // fechaTransaccion
+            // 
+            this.fechaTransaccion.HeaderText = "Fecha";
+            this.fechaTransaccion.Name = "fechaTransaccion";
+            // 
+            // monto
+            // 
+            this.monto.HeaderText = "Monto";
+            this.monto.Name = "monto";
+            // 
+            // cbActivo
+            // 
+            this.cbActivo.AutoSize = true;
+            this.cbActivo.Location = new System.Drawing.Point(230, 55);
+            this.cbActivo.Name = "cbActivo";
+            this.cbActivo.Size = new System.Drawing.Size(56, 17);
+            this.cbActivo.TabIndex = 24;
+            this.cbActivo.Text = "Activo";
+            this.cbActivo.UseVisualStyleBackColor = true;
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.Location = new System.Drawing.Point(358, 110);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(259, 36);
+            this.labelStatus.TabIndex = 25;
+            this.labelStatus.Text = "label7";
             // 
             // LONC00101
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 386);
+            this.Controls.Add(this.labelStatus);
+            this.Controls.Add(this.cbActivo);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.cboTipoNcf);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtClase);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtClientCode);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -341,6 +578,7 @@
             this.Text = "Tipo Comprobante Fiscal Cliente";
             this.Load += new System.EventHandler(this.LONC00101_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,14 +599,39 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtClientCode;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtClase;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cboTipoNcf;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ncf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaTransaccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLIENTID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ACTIVATIONDATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EXPIRATIONDATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENTCHARGE;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CODESTATUS;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn INACTIVE;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn FREETRIAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENTACCOUNT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRANSACTIONID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODIGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn WEB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sistema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COMENTARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PORT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SERVER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAYMENTGATEWAY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DEX_ROW_ID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox cbActivo;
+        private System.Windows.Forms.Label labelStatus;
     }
 }
 

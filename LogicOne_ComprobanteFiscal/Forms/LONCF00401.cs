@@ -30,7 +30,14 @@ namespace LogicOne_ComprobanteFiscal
 
         private void LONCF00401_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.CenterToScreen();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "LogicOne Número Comprobante Fiscal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

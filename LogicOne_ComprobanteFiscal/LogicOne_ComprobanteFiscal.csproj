@@ -59,6 +59,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\LONC00101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LONC00101.Designer.cs">
+      <DependentUpon>LONC00101.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LONCF00402.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Globales\Globales.cs" />
     <Compile Include="GpAddIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\LONC00101.resx">
+      <DependentUpon>LONC00101.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LONCF00401.resx">
       <DependentUpon>LONCF00401.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,11 +92,17 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -95,84 +110,83 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Toolbar_Print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Copy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_New.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Window_NotePresent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Void.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Redisplay.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Post.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Open.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_DeleteAll.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Clear.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Field_NotePresent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Field_NoteAbsent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Field_Lookup.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Field_Expansion.png" />
+    <None Include="Resources\Field_Delete.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Field_Edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Field_Delete.png" />
+    <None Include="Resources\Field_Expansion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Field_Lookup.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Field_MapPoint.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Window_NoteAbsent.png" />
+    <None Include="Resources\Field_NoteAbsent.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VCR_Previous.png" />
+    <None Include="Resources\Field_NotePresent.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VCR_Next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VCR_Last.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\VCR_First.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Toolbar_Delete.png" />
+    <None Include="Resources\HelpImage.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Toolbar_Cancel.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HelpImage.png" />
+    <None Include="Resources\Toolbar_Clear.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_DeleteAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Redisplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toolbar_Void.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VCR_First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VCR_Last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VCR_Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VCR_Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_NoteAbsent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_NotePresent.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

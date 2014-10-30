@@ -18,6 +18,7 @@ namespace LogicOne_ComprobanteFiscal
         // IDexterityAddIn interface
         LONCF00401 MantenimientoComprobanteFiscal;
         LONCF00402 ConfiguracionComprobanteFiscal;
+        LONC00101 MantenimientoCliente;
 
         //LOUPR00101FORM 
 
@@ -49,6 +50,7 @@ namespace LogicOne_ComprobanteFiscal
         const short COMMAND_SHORTCUT_KEY_F12 = 123;
 
         short MenuListTag1;
+        short MenuListTarjetaVentas;
         short MenuTag1;
         short MenuTag2;
         short MenuTag3;
@@ -82,6 +84,7 @@ namespace LogicOne_ComprobanteFiscal
             short BelowTag = 0;
             short ResID = 0;
             short Err = 0;
+            short VentasTarjeta;
 
             try
             {
@@ -116,11 +119,21 @@ namespace LogicOne_ComprobanteFiscal
 
                 // Get Parent Tag for command list to add menu to
                 ParentTag = MenusForVisualStudioTools.Functions.GetTagByName.Invoke(
-                                    DYNAMICS, "Command_Payroll", "CL_Payroll_Transactions");           // Dictionary ID, Form Name, Command Name
+                                    DYNAMICS, "Command_Sales", "CL_Sales_Setup");           // Dictionary ID, Form Name, Command Name
+
                 if (ParentTag <= 0)
                 {
                     throw new Exception("Parent GetTagByName, error code: " + Convert.ToString(ParentTag));
                 }
+
+                // Pantallas en tarjeta de clientes (Ventas)
+                VentasTarjeta = MenusForVisualStudioTools.Functions.GetTagByName.Invoke(
+                                    DYNAMICS, "Command_Sales", "CL_Sales_Cards");           // Dictionary ID, Form Name, Command Name
+                if (VentasTarjeta <= 0)
+                {
+                    throw new Exception("Parent GetTagByName, error code: " + Convert.ToString(VentasTarjeta));
+                }
+
 
                 // Get Below Tag for command/command list to add menu below
                 BelowTag = MenusForVisualStudioTools.Functions.GetTagByName.Invoke(
@@ -141,7 +154,22 @@ namespace LogicOne_ComprobanteFiscal
                 // Add Menu entry using API Function call to create parent for sub menu
                 MenuListTag1 = MenusForVisualStudioTools.Functions.Register.Invoke(
                                     ParentTag,                                              // Parent Command Tag
-                                    "LogicOne - Licencia TSS Apec",                                         // Menu Caption
+                                    "LogicOne - Número Comprobante Fiscal",                                         // Menu Caption
+                                    "",                                                     // Menu Tooltip
+                                    0, 0,                                                   // Menu Shortcut Key, Shortcut Modifier
+                                    false, false, false,                                    // Checked, Disabled, Hidden
+                                    BelowTag,                                               // Add Below Command Tag
+                                    false, true);                                           // Add Separator, Add Command List
+                if (MenuListTag1 <= 0)
+                {
+                    throw new Exception("Command List Register, error code: " + Convert.ToString(MenuListTag1));
+                }
+
+
+                // Lista del menu de tarjetas en Ventas
+                MenuListTarjetaVentas = MenusForVisualStudioTools.Functions.Register.Invoke(
+                                    VentasTarjeta,                                              // Parent Command Tag
+                                    "LogicOne - Número Comprobante Fiscal",                                         // Menu Caption
                                     "",                                                     // Menu Tooltip
                                     0, 0,                                                   // Menu Shortcut Key, Shortcut Modifier
                                     false, false, false,                                    // Checked, Disabled, Hidden
@@ -156,8 +184,8 @@ namespace LogicOne_ComprobanteFiscal
 
                 MenuTag1 = MenusForVisualStudioTools.Functions.RegisterWithSecurity.Invoke(
                                     MenuListTag1,                                           // Parent Command Tag
-                                    "Registro de licencias TSS",                                       // Menu Caption
-                                    "Click para registrar Registro de licencias TSS",                // Menu Tooltip
+                                    "Mantenimiento de Número de Comprobante Fiscal",                                       // Menu Caption
+                                    "Click para Mantenimiento de Número de Comprobante Fiscal",                // Menu Tooltip
                                     (int)'A', COMMAND_SHORTCUT_CTRLALT,                     // Menu Shortcut Key, Shortcut Modifier
                                     true, false, false,                                     // Checked, Disabled, Hidden
                                     0,                                                      // Add Below Command Tag
@@ -166,8 +194,8 @@ namespace LogicOne_ComprobanteFiscal
 
                 MenuTag2 = MenusForVisualStudioTools.Functions.RegisterWithSecurity.Invoke(
                           MenuListTag1,                                           // Parent Command Tag
-                          "LONCF00402 de licencias",                                       // Menu Caption
-                          "Click para LONCF00402 de licencias",                // Menu Tooltip
+                          "Configuración de Número Comprobante Fiscal",                                       // Menu Caption
+                          "Click para Configuración de Número Comprobante Fiscal",                // Menu Tooltip
                           (int)'A', COMMAND_SHORTCUT_CTRLALT,                     // Menu Shortcut Key, Shortcut Modifier
                           true, false, false,                                     // Checked, Disabled, Hidden
                           0,                                                      // Add Below Command Tag
@@ -175,15 +203,15 @@ namespace LogicOne_ComprobanteFiscal
                           DYNAMICS, ResID);                                        // Security Dictionary and Form Resource ID
 
 
-                //  MenuTag3 = MenusForVisualStudioTools.Functions.RegisterWithSecurity.Invoke(
-                //     MenuListTag1,                                           // Parent Command Tag
-                //     "Parametros Cesantia (Antes 1992) ",                                       // Menu Caption
-                //     "Click para crear Parametros a la Cesantia",                // Menu Tooltip
-                //     (int)'A', COMMAND_SHORTCUT_CTRLALT,                     // Menu Shortcut Key, Shortcut Modifier
-                //     true, false, false,                                     // Checked, Disabled, Hidden
-                //     0,                                                      // Add Below Command Tag
-                //     false, false,                                           // Add Separator, Add Command List
-                //     DYNAMICS, ResID);                                        // Security Dictionary and Form Resource ID
+                MenuTag3 = MenusForVisualStudioTools.Functions.RegisterWithSecurity.Invoke(
+                   MenuListTarjetaVentas,                                           // Parent Command Tag
+                   "Tipo Comprobante Fiscal Cliente",                                       // Menu Caption
+                   "Click para asignar Tipo Comprobante Fiscal Cliente",                // Menu Tooltip
+                   (int)'A', COMMAND_SHORTCUT_CTRLALT,                     // Menu Shortcut Key, Shortcut Modifier
+                   true, false, false,                                     // Checked, Disabled, Hidden
+                   0,                                                      // Add Below Command Tag
+                   false, false,                                           // Add Separator, Add Command List
+                   DYNAMICS, ResID);                                        // Security Dictionary and Form Resource ID
 
 
                 //  MenuTag4 = MenusForVisualStudioTools.Functions.RegisterWithSecurity.Invoke(
@@ -332,23 +360,23 @@ namespace LogicOne_ComprobanteFiscal
                 MenusForVisualStudioTools.Functions.Disable.Invoke(MenuTag2, false);
                 MenusForVisualStudioTools.Functions.Hide.Invoke(MenuTag3, false);
             }
-            //else if (Tag == MenuTag3)
-            //{
-            //    // Display Menu Caption
-            //    MenusForVisualStudioTools.Functions.GetCaption.Invoke(MenuTag3, out Caption);
-            //    LOUPR00102FORM(sender, e);
+            else if (Tag == MenuTag3)
+            {
+                // Display Menu Caption
+                MenusForVisualStudioTools.Functions.GetCaption.Invoke(MenuTag3, out Caption);
+                LONC00101(sender, e);
 
-            //    // Toggle Menu Check mark on first menu entry
-            //    Checked = MenusForVisualStudioTools.Functions.Checked.Invoke(MenuTag1);
-            //    if (Checked >= 0)
-            //    {
-            //        MenusForVisualStudioTools.Functions.Check.Invoke(MenuTag1, !(Checked == 1));
-            //    }
+                // Toggle Menu Check mark on first menu entry
+                Checked = MenusForVisualStudioTools.Functions.Checked.Invoke(MenuTag1);
+                if (Checked >= 0)
+                {
+                    MenusForVisualStudioTools.Functions.Check.Invoke(MenuTag1, !(Checked == 1));
+                }
 
-            //    // Enable second menu entry and show third menu entry
-            //    MenusForVisualStudioTools.Functions.Disable.Invoke(MenuTag2, false);
-            //    MenusForVisualStudioTools.Functions.Hide.Invoke(MenuTag3, false);
-            //}
+                // Enable second menu entry and show third menu entry
+                MenusForVisualStudioTools.Functions.Disable.Invoke(MenuTag2, false);
+                MenusForVisualStudioTools.Functions.Hide.Invoke(MenuTag3, false);
+            }
             //else if (Tag == MenuTag4)
             //{
             //    // Display Menu Caption
@@ -452,6 +480,27 @@ namespace LogicOne_ComprobanteFiscal
                     ConfiguracionComprobanteFiscal = new LONCF00402();
                 }
                 ConfiguracionComprobanteFiscal.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "LogicOne - Licencia TSS Apec", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Pantalla de Tarjeta de clientes
+        public void LONC00101(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MantenimientoCliente == null)
+                {
+                    MantenimientoCliente = new LONC00101();
+                }
+                else if (!MantenimientoCliente.Created)
+                {
+                    MantenimientoCliente = new LONC00101();
+                }
+                MantenimientoCliente.Show();
             }
             catch (Exception ex)
             {
