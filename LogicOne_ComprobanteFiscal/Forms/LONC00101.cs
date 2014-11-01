@@ -46,7 +46,7 @@ namespace LogicOne_ComprobanteFiscal
         {
             try
             {
-
+                // Comentario
             }
             catch (Exception ex)
             {
