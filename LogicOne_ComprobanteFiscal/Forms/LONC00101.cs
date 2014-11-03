@@ -8,11 +8,14 @@ using System.Windows.Forms;
 using Microsoft.Dexterity.Bridge;
 using Microsoft.Dexterity.Applications;
 using Microsoft.Dexterity.Shell;
+using MicrosoftDynamicsGPLogicOne;
+using ADODB;
 
 namespace LogicOne_ComprobanteFiscal
 {
     public partial class LONC00101 : DexUIForm
     {
+        Conexion conexion = new Conexion();
         public LONC00101()
         {
             InitializeComponent();
@@ -34,7 +37,25 @@ namespace LogicOne_ComprobanteFiscal
         {
             try
             {
-
+                MicrosoftDynamicsGPLogicOne.Lookup look = new Lookup("Busqueda de Preaviso", string.Format("LODYNDEV.dbo.LONC00101S1 {0} ", Globales.glb_InterCompany), 0, 1, 0, 0, 0, 0, "");
+                if (look.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    txtClientCode.Text = look.xData1;
+                    txtName.Text = look.xData2;
+                    Globales.SQLQueryExecute(Globales.xProject, string.Format("LODYNDEV.DBO.LONC00101S2 '{0}','{1}' ", Globales.glb_InterCompany, txtClientCode.Text),0);
+                    txtClase.Text = Globales.rsRecords.Fields[1].Value.ToString();
+                    txtTelefono.Text = Globales.rsRecords.Fields[2].Value.ToString();
+                    if (!ckActivo.Checked)
+                    {
+                        labelStatus.Text = "Inactivo";
+                        labelStatus.BackColor = Color.Red;
+                    }
+                    else if (ckActivo.Checked)
+                    {
+                        labelStatus.Text = "Activo";
+                        labelStatus.BackColor = Color.Green;
+                    }
+                }
             }
             catch (Exception ex)
             {
