@@ -37,7 +37,7 @@ namespace LogicOne_ComprobanteFiscal
         {
             try
             {
-                MicrosoftDynamicsGPLogicOne.Lookup look = new Lookup("Busqueda de Preaviso", string.Format("LODYNDEV.dbo.LONC00101S1 {0} ", Globales.glb_InterCompany), 0, 1, 0, 0, 0, 0, "");
+                MicrosoftDynamicsGPLogicOne.Lookup look = new Lookup("Busqueda de Cliente ", string.Format("LODYNDEV.dbo.LONC00101S1 {0} ", Globales.glb_InterCompany), 0, 1, 0, 0, 0, 0, "");
                 if (look.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     txtClientCode.Text = look.xData1;
